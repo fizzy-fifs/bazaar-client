@@ -10,7 +10,7 @@ import addNotification from '../../notices/notice';
 import Cookies from 'universal-cookie';
 
 function SignUp() {
-	const [user, setUser] = useState('');
+  const [user, setUser] = useState('');
 	const cookies = new Cookies();
 	const [redirect, setRedirect] = useState(false);
 
@@ -48,8 +48,9 @@ function SignUp() {
 	}
 
 	const transition = { duration: 0.5, ease: [0.37, 0, 0.63, 1] };
-	return (
-		<motion.div
+
+  return (
+    <motion.div
 			initial='initial'
 			animate='animate'
 			exit='exit'
@@ -133,7 +134,7 @@ function SignUp() {
 				<img src={logo}></img>
 			</motion.div>
 		</motion.div>
-	);
+  )
 }
 
-export default SignUp;
+export default SignUp
