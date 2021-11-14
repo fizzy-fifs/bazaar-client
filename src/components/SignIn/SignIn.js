@@ -9,9 +9,8 @@ import Cookies from 'universal-cookie';
 import axios from 'axios';
 import addNotification from '../../notices/notice';
 
-
 function SignIn() {
-	const [user, setUser] = useState('');
+  const [user, setUser] = useState('');
   const cookies = new Cookies();
   const [redirect, setRedirect] = useState(false)
 
@@ -44,9 +43,8 @@ function SignIn() {
   }
 
 	const transition = { duration: 0.5, ease: [0.37, 0, 0.63, 1]};
-	return (
-   
-		<motion.div initial='initial' animate='animate' exit='exit' className="Signin">
+  return (
+    <motion.div initial='initial' animate='animate' exit='exit' className="Signin">
 			
 			<motion.div initial={{opacity:1, position:'relative', left:'-50%'}} animate={{opacity:1, position:'relative', left:'0', transition: {delay:0.001, ...transition}}} className="form-space">
 				<div className="home-icon">
@@ -81,7 +79,7 @@ function SignIn() {
         <img src={logo}></img>
       </motion.div>
 		</motion.div>
-	);
+  )
 }
 
-export default SignIn;
+export default SignIn

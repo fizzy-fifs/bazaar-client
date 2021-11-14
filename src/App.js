@@ -4,7 +4,7 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import {AnimatePresence} from 'framer-motion';
 import Navbar from './components/navbar/Navbar';
 import LandingPage from './pages/landing-page/LandingPage';
-import SignIn from './pages/sign-in/SignIn';
+import SignIn from './pages/sign-in/SignInPage';
 import SignUp from './pages/sign-up/SignUp';
 import Home from './pages/home/Home';
 import PageNotFound from './pages/PageNotFound';
