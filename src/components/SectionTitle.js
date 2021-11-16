@@ -1,22 +1,5 @@
-import React, { useEffect, useState, Component } from 'react';
-import { Link } from "react-router-dom";
-import styled from 'styled-components';
-import Stalls from './Stalls/StallsBySection'
-import axios from 'axios';
-
-const useSections = () => {
-	const [sections, setSections] = useState([]);
-
-	const fetchSections = async () => {
-		await axios
-			.get(`https://bazaar-server.herokuapp.com/api/sections`)
-			.then((res) => setSections(res.data));
-	};
-
-	useEffect(() => fetchSections(), []);
-	return [sections];
-};
-
+import React from 'react';
+import useSections from '../hooks/SectionTitleHook';
 
 const SectionTitle = (props) => {
   const [sections] = useSections()
