@@ -1,6 +1,6 @@
 
 import './StallProfilePage.css';
-import StallsByUser from '../../components/Stalls/StallsByUser';
+import StallsByUser from '../../components/Stalls/stallsByUser/StallsByUser';
 
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css';
-import Sections from '../../components/Sections'
+import Sections from '../../components/Sections/Sections'
 
 
 const Home = () => {

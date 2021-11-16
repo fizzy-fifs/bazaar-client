@@ -11,6 +11,8 @@ const useSections = () => {
 	};
 
 	useEffect(() => fetchSections(), []);
+	console.log([sections])
+	localStorage.setItem('sections', JSON.stringify(sections))
 	return [sections];
 };
 

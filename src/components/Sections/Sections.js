@@ -1,27 +1,12 @@
 import React, { useEffect, useState, Component } from 'react';
-import { Link } from "react-router-dom";
 import Cookies from 'universal-cookie';
 import styled from 'styled-components';
-import StallsBySection from './Stalls/StallsBySection'
-import axios from 'axios';
-
-const useSections = () => {
-	const [sections, setSections] = useState([]);
-
-	const fetchSections = async () => {
-		await axios
-			.get('https://bazaar-server.herokuapp.com/api/sections')
-			.then((res) => setSections(res.data));
-	};
-
-	useEffect(() => fetchSections(), []);
-	return [sections];
-};
+import StallsBySection from '../Stalls/StallsBySection';
+import useSections from '../../hooks/Sections/SectionHook';
 
 
 const Sections = () => {
-
-  const [sections] = useSections();
+  const sections = JSON.parse(localStorage.getItem('sections'));
 
   const [currentSection, setCurrentSection] = useState("60c4c6ddc118f71813de7c27")
 	

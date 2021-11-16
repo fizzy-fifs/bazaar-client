@@ -7,7 +7,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 import RequestStall from '../../RequestStall/RequestStall';
 import ListProducts from '../../ListProducts/ListProducts';
-import SectionTitle from '../../SectionTitle';
+import SectionTitle from '../../Sections/SectionTitle';
 import Cookies from 'universal-cookie';
 import addNotification from '../../../notices/notice';
 
