@@ -1,9 +1,9 @@
 import React from 'react';
-import useSections from '../../hooks/Sections/SectionHook';
+import useSections from '../../hooks/Sections/SectionsHook';
 
 const SectionTitle = (props) => {
   
-  const [sections] = useSections();
+  const sections = JSON.parse(localStorage.getItem('sections'));
   
   // JSON.parse(localStorage.getItem('sections'));
   

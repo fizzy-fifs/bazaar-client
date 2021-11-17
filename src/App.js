@@ -1,4 +1,3 @@
-
 import './App.css';
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import {AnimatePresence} from 'framer-motion';
@@ -13,10 +12,8 @@ import Cookies from 'universal-cookie';
 import ViewStalls from './pages/view-clicked-stall/ViewStalls';
 import ReactNotifications from 'react-notifications-component';
 import Basket from './components/Basket/ViewBasket';
-import useSections from './hooks/Sections/SectionHook';
 
 const cookies = new Cookies();
-
 const signedInUser = cookies.get('user') || ''
 
 
@@ -44,6 +41,10 @@ function App() {
             </Switch>
           </AnimatePresence>
         </Router>
+
+        <> 
+          
+        </>
        
       </div>
       

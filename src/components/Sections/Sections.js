@@ -2,19 +2,20 @@ import React, { useEffect, useState, Component } from 'react';
 import Cookies from 'universal-cookie';
 import styled from 'styled-components';
 import StallsBySection from '../Stalls/StallsBySection';
-import useSections from '../../hooks/Sections/SectionHook';
+import useSections from '../../hooks/Sections/SectionsHook';
 
 
 const Sections = () => {
-  const sections = JSON.parse(localStorage.getItem('sections'));
-
+  useSections();
   const [currentSection, setCurrentSection] = useState("60c4c6ddc118f71813de7c27")
-	
   const cookies = new Cookies();
   let signedInUser = cookies.get('user') || ''
+  
+  const sections = JSON.parse(localStorage.getItem('sections'))
 
   return(
     <div>
+      {console.log(sections)}
       <div className="Sections-wrap" >
         <div className="Sections-heading">
           <h1 className="Sections-heading">Welcome, {signedInUser.first_name}</h1>
@@ -31,7 +32,7 @@ const Sections = () => {
         `;
             return (
               
-                <Content className='eachSection' onClick={() => setCurrentSection(`${section._id}`)} ><h1 style={{whiteSpace: 'pre-wrap', overflowWrap: 'break-word'}}>{section.title}</h1></Content>
+                <Content style={{ cursor: 'pointer' }} className='eachSection' onClick={() => setCurrentSection(`${section._id}`)} ><h1 style={{whiteSpace: 'pre-wrap', overflowWrap: 'break-word'}}>{section.title}</h1 ></Content>
               
               );
           })}
