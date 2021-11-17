@@ -12,10 +12,21 @@ import Cookies from 'universal-cookie';
 import ViewStalls from './pages/view-clicked-stall/ViewStalls';
 import ReactNotifications from 'react-notifications-component';
 import Basket from './components/Basket/ViewBasket';
+import sectionIsNotInLocalStorage from './helpers/sectionIsNotInLocalStorage';
+import stallIsNotInLocalStorage from './helpers/stallIsNotInLocalStorage';
+import setSectionsToStorage from './setToStorage/setSectionsToStorage';
+import setStallsToStorage from './setToStorage/setStallsToStorage';
 
 const cookies = new Cookies();
 const signedInUser = cookies.get('user') || ''
 
+if (sectionIsNotInLocalStorage()) {
+  setSectionsToStorage()
+}
+
+if (stallIsNotInLocalStorage()) {
+  setStallsToStorage()
+}
 
 function App() {
   return (

@@ -9,7 +9,7 @@ import RequestStall from '../../RequestStall/RequestStall';
 import ListProducts from '../../ListProducts/ListProducts';
 import SectionTitle from '../../Sections/SectionTitle';
 import Cookies from 'universal-cookie';
-import StallsHook from '../../../hooks/Stalls/StallsHook';
+import StallsHook from '../../../apiCalls/Stalls/fetchStalls';
 import isNotInLocalStorage from '../../../helpers/sectionIsNotInLocalStorage';
 
 const cookies = new Cookies()

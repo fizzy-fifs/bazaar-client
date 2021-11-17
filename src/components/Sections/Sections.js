@@ -2,14 +2,16 @@ import React, { useEffect, useState, Component } from 'react';
 import Cookies from 'universal-cookie';
 import styled from 'styled-components';
 import StallsBySection from '../Stalls/StallsBySection';
-import SectionsHook from '../../hooks/Sections/SectionsHook';
+import SectionsHook from '../../apiCalls/Sections/fetchSections';
 import sectionIsNotInLocalStorage from '../../helpers/sectionIsNotInLocalStorage';
 
 
 const Sections = () => {
-  <>
-   { sectionIsNotInLocalStorage && <SectionsHook /> }
-  </>
+  
+  // useEffect(() => {
+  //   setSectionsToStorage;
+  // }, [])
+  
   const sections = JSON.parse(localStorage.getItem('sections'))
 
   

@@ -1,5 +1,5 @@
 import React from 'react';
-import useSections from '../../hooks/Sections/SectionsHook';
+import useSections from '../../apiCalls/Sections/fetchSections';
 
 const SectionTitle = (props) => {
   
