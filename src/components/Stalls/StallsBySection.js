@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react'
 import Products from '../ViewProduct/Products'
 import './Stalls.css'
 import { Link } from 'react-router-dom';
-import useStalls from '../../hooks/Stalls/StallsHook';
+import StallsHooks from '../../hooks/Stalls/StallsHook';
+import stallIsNotInLocalStorage from '../../helpers/stallIsNotInLocalStorage';
 
 const StallsBySection = (props) => {
-  useStalls();
+  <> 
+    { stallIsNotInLocalStorage && <StallsHooks /> }
+  </>
   const stalls = JSON.parse(localStorage.getItem('stalls'));
 
   return (

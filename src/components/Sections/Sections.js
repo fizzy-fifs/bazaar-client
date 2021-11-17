@@ -2,20 +2,23 @@ import React, { useEffect, useState, Component } from 'react';
 import Cookies from 'universal-cookie';
 import styled from 'styled-components';
 import StallsBySection from '../Stalls/StallsBySection';
-import useSections from '../../hooks/Sections/SectionsHook';
+import SectionsHook from '../../hooks/Sections/SectionsHook';
+import sectionIsNotInLocalStorage from '../../helpers/sectionIsNotInLocalStorage';
 
 
 const Sections = () => {
-  useSections();
+  <>
+   { sectionIsNotInLocalStorage && <SectionsHook /> }
+  </>
+  const sections = JSON.parse(localStorage.getItem('sections'))
+
+  
   const [currentSection, setCurrentSection] = useState("60c4c6ddc118f71813de7c27")
   const cookies = new Cookies();
   let signedInUser = cookies.get('user') || ''
   
-  const sections = JSON.parse(localStorage.getItem('sections'))
-
   return(
     <div>
-      {console.log(sections)}
       <div className="Sections-wrap" >
         <div className="Sections-heading">
           <h1 className="Sections-heading">Welcome, {signedInUser.first_name}</h1>
