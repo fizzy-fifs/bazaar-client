@@ -1,7 +1,7 @@
 import React from "react";
 
 const stallIsNotInLocalStorage = () => {
-  return !localStorage.getItem('stall') ? true : false;
+  return !localStorage.getItem('stalls') ? true : false;
 }
 
 export default stallIsNotInLocalStorage

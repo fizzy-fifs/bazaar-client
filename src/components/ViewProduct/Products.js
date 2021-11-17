@@ -5,23 +5,11 @@ import { FaTimes, FaCommentDollar } from 'react-icons/fa';
 import './Products.css';
 import AddToBasket from '../Basket/AddToBasket';
 
-const useProducts = () => {
-	const [products, setProducts] = useState([]);
-
-	const fetchProducts = async () => {
-		await axios
-			.get('https://bazaar-server.herokuapp.com/api/products')
-			.then((res) => setProducts(res.data));
-	};
-
-	useEffect(() => fetchProducts(), []);
-	// console.log(products);
-	return [products];
-};
 
 function Products(props) {
-	const [products] = useProducts();
-	const [modalState, setmodalState] = useState(false);
+	const products = JSON.parse(localStorage.getItem('products'))
+	
+  const [modalState, setmodalState] = useState(false);
 	const [selectedProductId, setSelectedProductId] = useState('');
 
 	const selectedProduct = (id) => {

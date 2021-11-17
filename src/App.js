@@ -14,8 +14,11 @@ import ReactNotifications from 'react-notifications-component';
 import Basket from './components/Basket/ViewBasket';
 import sectionIsNotInLocalStorage from './helpers/sectionIsNotInLocalStorage';
 import stallIsNotInLocalStorage from './helpers/stallIsNotInLocalStorage';
+import productIsNotInLocalStorage from './helpers/productIsNotInLocalStorage';
 import setSectionsToStorage from './setToStorage/setSectionsToStorage';
 import setStallsToStorage from './setToStorage/setStallsToStorage';
+import setProductsToStorage from './setToStorage/setProductsToStorage';
+
 
 const cookies = new Cookies();
 const signedInUser = cookies.get('user') || ''
@@ -26,6 +29,10 @@ if (sectionIsNotInLocalStorage()) {
 
 if (stallIsNotInLocalStorage()) {
   setStallsToStorage()
+}
+
+if (productIsNotInLocalStorage()) {
+  setProductsToStorage()
 }
 
 function App() {

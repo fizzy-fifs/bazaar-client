@@ -1,7 +1,7 @@
 import React from "react";
 
 const sectionIsNotInLocalStorage = () => {
-  return !localStorage.getItem('section') ? true : false;
+  return !localStorage.getItem('sections') ? true : false;
 }
 
 export default sectionIsNotInLocalStorage
