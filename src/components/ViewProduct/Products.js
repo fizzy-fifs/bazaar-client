@@ -30,7 +30,7 @@ function Products(props) {
         (
           
           <>
-            <div className="eachProduct" onClick={ () => selectedProduct(filteredProduct._id) }> 
+            <div style={{ cursor: 'pointer' }} className="eachProduct" onClick={ () => selectedProduct(filteredProduct._id) }> 
               <div className="product-img">
               { filteredProduct.image[0] && <img src={filteredProduct.image[0]} style={{display: "block", margin:"0 auto"}}/> }
               </div>
